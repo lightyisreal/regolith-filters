@@ -1,0 +1,16 @@
+{
+  "name": "regolith-fast-ts",
+  "version": "1.0.0",
+  "description": "Transpiles TypeScript into JavaScript in a matter of a few seconds using esbuild.",
+  "license": "MIT",
+  "author": "LightyIsReal",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "esbuild": "^0.25.8",
+    "fs": "^0.0.1-security"
+  }
+}

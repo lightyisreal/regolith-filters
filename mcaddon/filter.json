@@ -1,0 +1,9 @@
+{
+    "description": "A Regolith filter that packages your add-on into a .mcaddon file to distribute.",
+    "filters": [
+        {
+            "runWith": "nodejs",
+            "script": "index.js"
+        }
+    ]
+}

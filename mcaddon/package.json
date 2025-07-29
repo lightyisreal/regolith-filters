@@ -1,0 +1,16 @@
+{
+  "name": "regolith-mcaddon-packer",
+  "version": "1.0.0",
+  "description": "Automatically packages your add-on into a .mcaddon file to distribute.",
+  "license": "MIT",
+  "author": "LightyIsReal",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "fs": "^0.0.1-security"
+  }
+}

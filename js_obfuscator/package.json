@@ -1,0 +1,16 @@
+{
+  "name": "regolith-js-obfuscator-filter",
+  "version": "1.0.0",
+  "description": "A Regolith filter that obfuscates JavaScript code to protect your code from unwanted stealers.",
+  "license": "MIT",
+  "author": "LightyIsReal",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "javascript-obfuscator": "^4.1.1"
+  }
+}

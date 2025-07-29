@@ -1,0 +1,9 @@
+{
+    "description": "A Regolith filter that transpiles TypeScript into JavaScript in a matter of a few seconds using esbuild.",
+    "filters": [
+        {
+            "runWith": "nodejs",
+            "script": "index.js"
+        }
+    ]
+}

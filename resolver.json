@@ -1,0 +1,14 @@
+{
+    "formatVersion": "1.0.0",
+    "filters": {
+        "fast_ts": {
+            "url": "github.com/lightyisreal/regolith-filters"
+        },
+        "js_obfuscator": {
+            "url": "github.com/lightyisreal/regolith-filters"
+        },
+        "mcaddon": {
+            "url": "github.com/lightyisreal/regolith-filters"
+        }
+    }
+}
