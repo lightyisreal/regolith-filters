@@ -1,10 +1,14 @@
 import archiver from "archiver";
 import { createWriteStream } from "fs";
-import { readFile } from "fs/promises";
+import { readFile, mkdir } from "fs/promises";
 
 const regolithConfig = JSON.parse((await readFile(`${process.env.ROOT_DIR}/config.json`)).toString());
 
-const output = createWriteStream(`${process.env.ROOT_DIR}/build/${regolithConfig.name}.mcaddon`);
+await mkdir(`${process.env.ROOT_DIR}/build`, { recursive: true });
+
+const output = createWriteStream(`${process.env.ROOT_DIR}/build/${regolithConfig.name}.mcaddon`, {
+
+});
 const archive = archiver("zip", {
     zlib: { level: 9 },
 });
