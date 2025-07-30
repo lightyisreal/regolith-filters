@@ -1,5 +1,5 @@
 {
-    "description": "A Regolith filter that obfuscates JavaScript code to protect your code from unwanted stealers.",
+    "description": "Obfuscates JavaScript code to protect your code from unwanted stealers.",
     "filters": [
         {
             "runWith": "nodejs",
