@@ -8,8 +8,16 @@ await rm("BP/scripts", {
     force: true
 });
 
-const bpManifest = (await readFile("BP/manifest.json")).toString();
-const bpDependencies = JSON.parse(bpManifest).dependencies;
+const bpManifest = JSON.parse((await readFile("BP/manifest.json")).toString());
+const bpDependencies = bpManifest.dependencies;
+let bpScriptEntryPoint = "index.ts";
+
+for (const module of bpManifest.modules) {
+    if (module.type === "script") {
+        bpScriptEntryPoint = bpScriptEntryPoint.replace("scripts/", "").replace(".js", ".ts");
+        break;
+    }
+}
 
 const defaultConfig = {
     bundle: false
@@ -30,7 +38,7 @@ let config = Object.assign(defaultConfig, regolithConfig, overwrittenConfig);
 
 if (config.merge) {
     config.entryPoints = [
-        "BP/tmp_scripts/index.ts"
+        `BP/tmp_scripts/${bpScriptEntryPoint}`
     ];
     config.external = (() => {
         const modules = [];
