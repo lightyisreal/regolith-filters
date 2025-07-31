@@ -14,7 +14,7 @@ let bpScriptEntryPoint = "index.ts";
 
 for (const module of bpManifest.modules) {
     if (module.type === "script") {
-        bpScriptEntryPoint = bpScriptEntryPoint.replace("scripts/", "").replace(".js", ".ts");
+        bpScriptEntryPoint = module.entry.replace("scripts/", "").replace(".js", ".ts");
         break;
     }
 }
