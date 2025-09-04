@@ -1,0 +1,10 @@
+{
+    "description": "Rotates selected images.",
+    "filters": [
+        {
+            "exportData": true,
+            "runWith": "nodejs",
+            "script": "index.js"
+        }
+    ]
+}

@@ -4,6 +4,9 @@
         "fast_ts": {
             "url": "github.com/lightyisreal/regolith-filters"
         },
+        "image_rotate": {
+            "url": "github.com/lightyisreal/regolith-filters"
+        },
         "js_obfuscator": {
             "url": "github.com/lightyisreal/regolith-filters"
         },
