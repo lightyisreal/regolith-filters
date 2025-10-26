@@ -52,6 +52,13 @@ if (config.merge) {
     delete config["merge"];
 }
 
+if (config.minify) {
+    delete config["minify"];
+    config.minifyWhitespace = true;
+    config.minifyIdentifiers = false;
+    config.minifySyntax = true;
+}
+
 await build(config);
 
 await rm("BP/tmp_scripts", {
