@@ -10,7 +10,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "esbuild": "^0.25.8",
-    "fs": "^0.0.1-security"
+    "esbuild": "^0.27.1"
   }
 }

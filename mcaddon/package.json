@@ -10,7 +10,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "archiver": "^7.0.1",
-    "fs": "^0.0.1-security"
+    "archiver": "^7.0.1"
   }
 }

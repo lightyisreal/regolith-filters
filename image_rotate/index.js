@@ -9,13 +9,13 @@ let config = {
      *  rotations: number[];
      * }[]}
      */
-    files: []
+    files: [],
 };
 
 try {
     const parsedFile = await readFile("data/image_rotate/config.json");
 
-    config = JSON.parse(parsedFile.toString('utf-8'));
+    config = JSON.parse(parsedFile.toString("utf-8"));
 } catch (e) {
     console.error(e);
     await mkdir("data/image_rotate", { recursive: true });
@@ -32,7 +32,11 @@ for (const file of config.files) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.translate(canvas.width / 2, canvas.height / 2);
             ctx.rotate((angle * Math.PI) / 180);
-            ctx.drawImage(loadedImage, - (canvas.width / 2), - (canvas.height / 2));
+            ctx.drawImage(
+                loadedImage,
+                -(canvas.width / 2),
+                -(canvas.height / 2),
+            );
             ctx.restore();
             const newFile = file.path.replace(".png", `_${angle}.png`);
             const out = createWriteStream(newFile);

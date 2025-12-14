@@ -10,7 +10,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "fs": "^0.0.1-security",
-    "javascript-obfuscator": "^4.1.1"
+    "javascript-obfuscator": "^5.1.0"
   }
 }
