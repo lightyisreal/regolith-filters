@@ -45,6 +45,7 @@ const overwrittenConfig: BuildOptions = {
 
 const regolithConfig = process.argv[2] ? JSON.parse(process.argv[2]) : {};
 
+// Merge the two configs, with the regolith config taking precedence over the overwritten config
 const config: BuildOptions = {...overwrittenConfig, ...regolithConfig };
 
 console.log("Rolldown config:", JSON.stringify(config));
