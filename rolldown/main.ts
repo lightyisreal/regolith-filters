@@ -18,7 +18,7 @@ for (const module of bpManifest.modules) {
 	if (module.type === "script") {
 		bpScriptEntryPoint = module.entry.replace("scripts/", "");
 		if (module.entry.endsWith(".ts")) {
-			bpScriptEntryPoint = bpScriptEntryPoint.replace(".ts", ".js");
+			module.entry = module.entry.replace(".ts", ".js");
 		}
 		break;
 	}
@@ -48,9 +48,11 @@ const regolithConfig = process.argv[2] ? JSON.parse(process.argv[2]) : {};
 // Merge the two configs, with the regolith config taking precedence over the overwritten config
 const config: BuildOptions = {...overwrittenConfig, ...regolithConfig };
 
-console.log("Rolldown config:", JSON.stringify(config));
+console.log("Building with config:", JSON.stringify(config));
 
-await build(config);
+const result = await build(config);
+
+console.log(result);
 
 await rm("BP/tmp_scripts", {
 	recursive: true,
