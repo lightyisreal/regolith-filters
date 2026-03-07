@@ -24,8 +24,6 @@ for (const module of bpManifest.modules) {
 	}
 }
 
-const defaultConfig = {};
-
 const overwrittenConfig: BuildOptions = {
 	input: join("BP/tmp_scripts", bpScriptEntryPoint),
 	transform: {
@@ -47,7 +45,7 @@ const overwrittenConfig: BuildOptions = {
 
 const regolithConfig = process.argv[2] ? JSON.parse(process.argv[2]) : {};
 
-const config: BuildOptions = Object.assign(defaultConfig, regolithConfig, overwrittenConfig);
+const config: BuildOptions = {...overwrittenConfig, ...regolithConfig };
 
 console.log("Rolldown config:", JSON.stringify(config));
 
