@@ -45,14 +45,22 @@ const overwrittenConfig: BuildOptions = {
 
 const regolithConfig = process.argv[2] ? JSON.parse(process.argv[2]) : {};
 
+// deno-lint-ignore no-explicit-any
+function deepMerge(target: any, source: any): any {
+  for (const key in source) {
+    if (source[key] instanceof Object && key in target) {
+      Object.assign(source[key], deepMerge(target[key], source[key]));
+    }
+  }
+  return { ...target, ...source };
+}
+
 // Merge the two configs, with the regolith config taking precedence over the overwritten config
-const config: BuildOptions = {...overwrittenConfig, ...regolithConfig };
+const config: BuildOptions = deepMerge(overwrittenConfig, regolithConfig);
 
 console.log("Building with config:", JSON.stringify(config));
 
-const result = await build(config);
-
-console.log(result);
+await build(config);
 
 await rm("BP/tmp_scripts", {
 	recursive: true,
