@@ -49,6 +49,8 @@ const regolithConfig = process.argv[2] ? JSON.parse(process.argv[2]) : {};
 
 const config: BuildOptions = Object.assign(defaultConfig, regolithConfig, overwrittenConfig);
 
+console.log("Rolldown config:", JSON.stringify(config));
+
 await build(config);
 
 await rm("BP/tmp_scripts", {
