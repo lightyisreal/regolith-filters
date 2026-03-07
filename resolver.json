@@ -1,7 +1,7 @@
 {
     "formatVersion": "1.0.0",
     "filters": {
-        "fast_ts": {
+        "rolldown": {
             "url": "github.com/lightyisreal/regolith-filters"
         },
         "image_rotate": {

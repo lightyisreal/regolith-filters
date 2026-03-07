@@ -1,9 +1,0 @@
-{
-    "description": "Transpiles TypeScript into JavaScript in a few seconds using esbuild.",
-    "filters": [
-        {
-            "runWith": "nodejs",
-            "script": "index.js"
-        }
-    ]
-}
