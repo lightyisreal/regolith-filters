@@ -1,6 +1,10 @@
 {
+	"version": "1.0.0",
+	"license": "MIT",
 	"imports": {
-		"@std/assert": "jsr:@std/assert@1"
+		"@std/assert": "jsr:@std/assert@1",
+		"@types/node": "npm:@types/node@^25.3.5",
+		"rolldown": "npm:rolldown@^1.0.0-rc.7"
 	},
 	"fmt": {
 		"semiColons": true,

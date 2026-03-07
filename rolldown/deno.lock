@@ -174,13 +174,9 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@std/assert@1"
-    ],
-    "packageJson": {
-      "dependencies": [
-        "npm:@types/node@^25.3.5",
-        "npm:rolldown@^1.0.0-rc.7"
-      ]
-    }
+      "jsr:@std/assert@1",
+      "npm:@types/node@^25.3.5",
+      "npm:rolldown@^1.0.0-rc.7"
+    ]
   }
 }
