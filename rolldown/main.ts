@@ -27,13 +27,13 @@ for (const module of bpManifest.modules) {
 const overwrittenConfig: BuildOptions = {
 	input: join("BP/tmp_scripts", bpScriptEntryPoint),
 	transform: {
-		target: "es2020",
+		target: "es2023",
 	},
 	output: {
 		dir: "BP/scripts",
 		format: "esm",
 	},
-    external: (() => {
+	external: (() => {
 		const modules = [];
 		for (const dep of bpDependencies) {
 			if (!dep.module_name?.startsWith("@minecraft/")) continue;
@@ -47,18 +47,18 @@ const regolithConfig = process.argv[2] ? JSON.parse(process.argv[2]) : {};
 
 // deno-lint-ignore no-explicit-any
 function deepMerge(target: any, source: any): any {
-  for (const key in source) {
-    if (source[key] instanceof Object && key in target) {
-      Object.assign(source[key], deepMerge(target[key], source[key]));
-    }
-  }
-  return { ...target, ...source };
+	for (const key in source) {
+		if (source[key] instanceof Object && key in target) {
+			Object.assign(source[key], deepMerge(target[key], source[key]));
+		}
+	}
+	return { ...target, ...source };
 }
 
 // Merge the two configs, with the regolith config taking precedence over the overwritten config
 const config: BuildOptions = deepMerge(overwrittenConfig, regolithConfig);
 
-console.log("Building with config:", JSON.stringify(config));
+// console.log("Building with config:", JSON.stringify(config));
 
 await build(config);
 
